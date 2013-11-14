@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.get('http://pipes.yahoo.com/pipes/pipe.run?_id=a7d6b876ecda107e4939554ee897eb71&_render=json',function(data) {
+				$.each(data.value.items[0].channel.item, function(){
+					$('body').append('<a href="'+this.enclosure.url+'">'+this.title+' - '+this['itunes:subtitle']+' ('+this.description+')</a>')
+				})
+			})
+		})
+	</script>
+	<style type="text/css">
+		body { max-width: 200em; margin: 20px auto }
+		a { font: .8em Arial,sans-serif; display: block; margin: 4px; text-decoration: none }
+		a:hover { text-decoration: underline }
+	</style>
+</head>
+<body>
+</body>
+</html>
