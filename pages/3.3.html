@@ -1,0 +1,14 @@
+<page>
+<title>Example: Selector Expansion</title>
+<script type="less">
+p, a, ul, li {
+    border-top: 2px dotted #366;
+    & + & {
+        border-top: 0;
+    }
+}
+</script>
+<script type="html">
+<p>P1</p><p>P2</p>
+</script>
+</page>

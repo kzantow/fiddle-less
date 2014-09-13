@@ -1,0 +1,24 @@
+<page>
+    <title>Example: Namespaces</title>
+<script type="less">
+#my-library {
+    .my-mixin() {
+        color: red;
+    }
+}
+// which can be used like this
+.b {
+    #my-library > .my-mixin();
+}
+</script>
+<script type="html">
+<h6>
+<div class="b">
+    Btn
+</div>
+<div class="btn">
+    Btn Default
+</div>
+</h6>
+</script>
+</page>

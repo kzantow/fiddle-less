@@ -1,0 +1,21 @@
+<page>
+<title>Example: Media Query Bubbling</title>
+<script type="less">
+body {
+    background: #fcc;
+
+    // @media nested within body
+    @media (min-width: 200px) {
+        background: #ccf;
+        
+        // nested @media rules appended
+        @media print {
+            background: white;
+        }
+    }
+}
+</script>
+<script type="html">
+<h6>Background set by Media Query</h6>
+</script>
+</page>

@@ -1,0 +1,46 @@
+<page>
+    <title>Lean Example: Antipatterns</title>
+<script type="less">
+.results-row-button {
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #cccccc 100%);
+    background: linear-gradient(to bottom, #f8f8f8 0%, #cccccc 100%);
+    border: 1px solid #b3b3b3;
+    border-radius: 3.66666667px;
+    padding: 5.5px 14.3px;
+    font-size: 11px;
+    line-height: 16.5px;
+}
+.shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+}
+.results-row td {
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+}
+.results-row:hover {
+    background: #eee;
+}
+</script>
+<script type="html">
+<div class="results">
+	<table class="results-table shadow">
+        <thead><tr><th>User Name</th><td></td></tr></thead>
+        <tbody>
+            <tr class="results-row"><td>Andrew</td><td>
+            <input class="results-row-button" type="submit" value="Delete"/></td></tr>
+            <tr class="results-row"><td>Brad</td><td>
+            <input class="results-row-button" type="submit" value="Delete"/></td></tr>
+            <tr class="results-row"><td>Kirk</td><td>
+            <input class="results-row-button" type="submit" value="Delete"/></td></tr>
+            <tr class="results-row"><td>Simon</td><td>
+            <input class="results-row-button" type="submit" value="Delete"/></td></tr>
+            <tr class="results-row"><td>Zach</td><td>
+            <input class="results-row-button" type="submit" value="Delete"/></td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="2"><input type="submit" value="Update"/></td></tr>
+        </tfoot>
+	</table>
+</div>
+</script>
+</page>

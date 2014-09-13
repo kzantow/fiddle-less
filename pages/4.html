@@ -1,0 +1,30 @@
+<page>
+    <title>Example: Mixins</title>
+<script type="less">
+// included in css:
+.btn {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px 30px;
+}
+// Not inluded in css directly:
+.btn-default() {
+    background: #eee;
+    color: #446;
+}
+.b {
+    .btn;
+    .btn-default;
+    height: 50px;
+}
+</script>
+<script type="html">
+<div class="b">
+    Btn
+</div>
+<div class="btn">
+    Btn Default
+</div>
+</script>
+</page>

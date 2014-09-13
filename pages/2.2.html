@@ -1,0 +1,19 @@
+<page>
+<title>Example: Variables Scope</title>
+<script type="less">
+@var: red;
+.home {
+    @var: blue;
+    color: @var;
+}
+.menu {
+    color: @var;
+}
+</script>
+<script type="html">
+<h6>
+<div class="home">Home</div>
+<div class="menu">Home</div>
+</h6>
+</script>
+</page>

@@ -1,0 +1,26 @@
+<page>
+    <title>Example: CSS</title>
+<script type="less">
+// plain old css:
+body {
+    background: #fcc;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+@media (min-width: 200px) {
+    body {
+        background: #ccf;
+    }
+}
+body > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -39px 0 0 -99px;
+}
+</script>
+<script type="html">
+<img src="http://lesscss.org/public/img/logo.png" />
+</script>
+</page>

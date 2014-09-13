@@ -1,0 +1,23 @@
+<page>
+<title>Example: Variables</title>
+<script type="less">
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+@height: 2em + 1;
+@radius: @height/3;
+
+.header {
+    line-height: @height;
+    border-radius: @radius;
+    background: @light-blue;
+    color: darken(@nice-blue,30%);
+    font-size: @height;
+    text-align: center;
+}
+</script>
+<script type="html">
+<div class="header">
+    Header
+</div>
+</script>
+</page>

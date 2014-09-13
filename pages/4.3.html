@@ -1,0 +1,27 @@
+<page>
+    <title>Example: Guards</title>
+<script type="less">
+.mixin (@a) when (lightness(@a) >= 50%) {
+    background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+    background-color: white;
+}
+.mixin (@a) {
+    color: @a;
+}
+
+.c1 { .mixin(#ddd) }
+.c2 { .mixin(#555) }
+</script>
+<script type="html">
+<h6>
+<div class="c1">
+    Btn
+</div>
+<div class="c2">
+    Btn Default
+</div>
+</h6>
+</script>
+</page>

@@ -1,0 +1,29 @@
+<page>
+    <title>Example: Mixins & Parameters</title>
+<script type="less">
+.text(@val) {
+    &:before {
+        content: @val;
+    }
+}
+.gradient (@startColor: #fff, @endColor: #f4f4f4) {
+    background-color: @startColor;
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.button() {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    .gradient;
+    // &:hover { .gradient(#eee,#ddd); }
+}
+button {
+    .button;
+    .text('Button!');
+    height: 50px;
+}
+</script>
+<script type="html">
+    Button: <button></button>
+</script>
+</page>

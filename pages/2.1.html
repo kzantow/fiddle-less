@@ -1,0 +1,17 @@
+<page>
+<title>Example: Variables Interpolation</title>
+<script type="less">
+@custom-qualifier: final;
+
+.header-@{custom-qualifier} {
+    rule-@{custom-qualifier}: '@{custom-qualifier}';
+    &:after {
+        content: '@{custom-qualifier}';
+        float: right;
+    }
+}
+</script>
+<script type="html">
+<h6 class="header-final">Example</h6>
+</script>
+</page>
