@@ -1,0 +1,53 @@
+<page>
+    <title>Lean Example: Tables</title>
+<script type="less">
+@import url(buttons.less);
+.results {
+	color: #888;
+	table {
+		box-shadow: 3px 3px 15px #ccc;
+		border-spacing: 0;
+		tbody td, th {
+			border-top: 1px solid #ccc;
+			padding: 6px;
+		}
+		thead tr:first-child {
+			td, th {
+				border:0;
+			}
+		}
+		tbody tr {
+			&:hover {
+				background: #eee;
+			}
+			input[type=submit] {
+				.gray-button(11px);
+			}
+		}
+		tfoot {
+			input[type=submit] {
+				.gray-button(14px);
+                padding: 5px 20px;
+            }
+        }
+    }
+}
+</script>
+<script type="html">
+<div class="results">
+	<table>
+        <thead><tr><th>User Name</th><td></td></tr></thead>
+        <tbody>
+            <tr><td>Andrew</td><td><input type="submit" value="Delete"/></td></tr>
+            <tr><td>Brad</td><td><input type="submit" value="Delete"/></td></tr>
+            <tr><td>Kirk</td><td><input type="submit" value="Delete"/></td></tr>
+            <tr><td>Simon</td><td><input type="submit" value="Delete"/></td></tr>
+            <tr><td>Zach</td><td><input type="submit" value="Delete"/></td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="2"><input type="submit" value="Update"/></td></tr>
+        </tfoot>
+	</table>
+</div>
+</script>
+</page>

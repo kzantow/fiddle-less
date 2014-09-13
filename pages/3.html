@@ -1,0 +1,29 @@
+<page>
+<title>Example: Nesting</title>
+<script type="less">
+// a generic header
+.header {
+    background: #f8f8f8;
+    a {
+        // display menu links a special way
+        display: inline-block;
+        padding: 10px 10px;
+        text-decoration: none;
+        &:hover {
+            // add a hover style
+            background: #eee;
+        }
+    }
+}
+</script>
+<script type="html">
+<div class="header">
+    <a href="#">Thing 1</a>
+    <a href="#">Thing 2</a>
+    <a href="#">Thing 3</a>
+    <a href="#">Thing 4</a>
+</div>
+<div class="content">
+</div>
+</script>
+</page>

@@ -1,0 +1,85 @@
+<page>
+    <title>Lean Example: Site Layout</title>
+<script type="less">
+    @import url(buttons.less);
+.menu {
+    background: #eee;
+    margin-bottom: 10px;
+    position: relative;
+    a {
+        display: inline-block;
+        padding: 10px;
+        &:hover {
+            background: #444;
+            color: #eee;
+        }
+    }
+}
+.ad {
+    text-align: center;
+}
+.news {
+    box-sizing: border-box;
+    padding: 0 6px 0 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 39%;
+    > div {
+        > a {
+            display: block;
+            font-weight: bold;
+            margin: 10px 6px 2px 0;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}
+.info {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    a {
+        display: block;
+    }
+}
+</script>
+<script type="html">
+<div class="menu">
+    <a>Item 1</a>
+    <a>Item 1</a>
+    <a>Item 1</a>
+</div>
+<div class="content">
+    <div class="ad">
+        <img src="http://lesscss.org/public/img/logo.png" />
+    </div>
+    <div class="news">
+        <div>
+        <a>Item 1</a>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum nec erat id luctus. Vestibulum in
+        </div>
+        </div>
+
+        <div>
+        <a>Item 2</a>
+        <div>Tortor eu odio blandit dignissim. Sed a venenatis lorem. Etiam mollis congue fermentum. Duis at aliquet erat, id rutrum nisl. Proin et dapibus
+        </div>
+        </div>
+
+        <div>
+        <a>Item 3</a>
+        <div>Felis. Nullam placerat, tortor rutrum venenatis pellentesque, augue ipsum tincidunt est, at malesuada quam tortor id odio.
+        </div>
+        </div>
+    </div>
+    <div class="info">
+    <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum nec erat id luctus. Vestibulum in tortor eu odio blandit dignissim. Sed a venenatis lorem. Etiam mollis congue fermentum. Duis at aliquet erat, id rutrum nisl. Proin et dapibus felis. Nullam placerat, tortor rutrum venenatis pellentesque, augue ipsum tincidunt est, at malesuada quam tortor id odio.
+</p><p>Sed pretium sodales nulla et gravida. Nulla commodo tincidunt libero commodo molestie. Aliquam lacus est, scelerisque vitae arcu ut, euismod pharetra neque. Praesent vehicula efficitur lacinia. Nunc at massa ante. In vulputate accumsan metus ut imperdiet. Duis a nunc pulvinar, sollicitudin ante eget, viverra purus.
+    </p><p>Maecenas elementum nisi et eros pellentesque, sed vehicula massa mattis. Nam consequat quam at mauris scelerisque, at ornare tellus efficitur. Nullam quis lectus ac erat viverra bibendum. Duis tincidunt, sapien vel fringilla auctor, leo nibh sodales magna, a porttitor mi libero non libero. Suspendisse in ex eu nulla gravida varius. Donec varius elementum neque, ac suscipit diam consequat vel. Cras ut sem a orci mattis ornare quis a velit. Integer consectetur augue turpis, eu vehicula libero tristique nec. Integer euismod luctus turpis, sit amet condimentum dolor mattis mollis. Proin sed nunc non urna fermentum tincidunt. Nulla diam tortor, commodo sed elit ac, mollis vulputate augue. Maecenas varius gravida nulla vel faucibus. Proin in massa vel velit dapibus blandit nec quis nulla. Vivamus risus orci, vestibulum vitae justo id, ullamcorper eleifend ligula.
+    </p><p>Nullam sit amet nunc sed risus dapibus rhoncus luctus vel purus. In hac habitasse platea dictumst. Pellentesque sagittis massa nec libero convallis commodo. Vestibulum dignissim neque sed tellus blandit egestas. Integer volutpat facilisis est, quis condimentum quam rutrum in. Vivamus sed dui felis. Quisque ac felis placerat, ultricies nulla porta, faucibus nibh. Curabitur sit amet tristique leo.
+    </p><p>Sed sed odio tincidunt ipsum tempor sollicitudin quis nec diam. Pellentesque suscipit nec orci sed mollis. Ut congue suscipit semper. In at ante eget diam mollis suscipit quis ac enim. Quisque aliquam aliquet orci sit amet tristique. Mauris imperdiet odio neque, nec venenatis quam scelerisque eu. Vivamus enim massa, placerat vitae fringilla et, luctus eget est. Suspendisse egestas dolor vitae elit viverra, non porttitor ipsum varius. Cras at porttitor nunc, cursus egestas neque. Nunc gravida mollis aliquam.    </p>
+</div>
+    </div>
+</div>
+</script>
+</page>

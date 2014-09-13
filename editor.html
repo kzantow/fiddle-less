@@ -4,117 +4,64 @@
 	<meta charset="UTF-8">
 	<title>LESS Compiler</title>
 	<link rel="shortcut icon" href="https://lesscss.org/favicon.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/codemirror.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/theme/eclipse.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/theme/xq-light.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/theme/neat.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/theme/solarized.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/theme/eclipse.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/theme/xq-light.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/theme/neat.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/theme/solarized.css"/>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="editor.css"/>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/codemirror.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/addon/mode/loadmode.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/mode/less/less.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/mode/xml/xml.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/mode/css/css.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.19.0/mode/htmlembedded/htmlembedded.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/addon/mode/loadmode.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/xml/xml.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/css/css.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/htmlembedded/htmlembedded.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.4/less.min.js"></script>
 	<script type="text/javascript" src="editor.js"></script>
-	<style type="text/css" id="rendered-style">
-	</style>
+	<script type="text/javascript" src="presenter.js"></script>
 </head>
 <body>
-	<img src="http://lesscss.org/public/img/logo.png"/>
+    <img src="http://lesscss.org/public/img/logo.png"/>
+    <h1></h1>
+    <div class="examples">
+        <span class="prev btn btn-default">
+            
+        </span>
+        <span class="dropdown">
+            <a href="#" class="btn btn-default dropdown-toggle example" data-toggle="dropdown">Example <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            </ul>
+        </span>
+        <span class="next btn btn-default">
+            
+        </span>
+    </div>
+
+    <span class=""></span>
 	<div class="editor less">
-		<textarea name="less">
-// Make this button.css:
-.gradient(@from,@to) {
-	background: -moz-linear-gradient(top, @from 0%, @to 100%);
-	background: linear-gradient(to bottom, @from 0%,@to 100%);
-}
-.button(@size,@from,@to) {
-	.gradient(@from,@to);
-	border: 1px solid darken(@to,10%);
-	border-radius: @size/4;
-	padding: @size/6+1 @size;
-	font-size: @size;
-	&:hover {
-		.gradient(lighten(@from,5%),lighten(@to,5%));
-	}
-	&:active {
-		.gradient(lighten(@from,5%),lighten(@to,5%));
-		box-shadow: inset 1px 1px 8px 0 darken(@to,10%);
-    	outline: none;
-	}
-	&:focus {
-		outline: none;
-	}
-}
-.gray-button(@size) {
-	.button(@size,#f8f8f8,#cccccc);
-}
-.blue-button(@size) {
-	color: #fff;
-	text-shadow: 0 -1px 1px #228;
-	.button(@size,#56f,#34d);
-}
-.results {
-	font: 14px Calibri, Helvetica, sans-serif;
-	color: #888;
-	table {
-		border: 1px solid #888;
-		box-shadow: 3px 3px 15px #ccc;
-		border-spacing: 0;
-		td, th {
-			border-top: 1px solid #ccc;
-			padding: 6px;
-		}
-		thead tr:first-child {
-			td, th {
-				border:0;
-			}
-		}
-		thead th {
-			font-weight: bold;
-		}
-		tbody tr {
-			&:hover {
-				background: #eee;
-			}
-			input[type=submit] {
-				.gray-button(9px);
-			}
-		}
-		tfoot {
-			input[type=submit] {
-				.blue-button(14px);
-			}
-		}
-	}
-}</textarea>
+		<textarea name="less"></textarea>
 	</div>
 	<div class="editor css">
 		<textarea name="css"></textarea>
 	</div>
 	<div class="editor html">
-		<textarea name="html">
-<div class="results">
-	<table>
-		<thead><tr><th>User Name</th><td></td></tr></thead>
-		<tbody>
-			<tr><td>Andrew</td><td><input type="submit" value="Delete"/></td></tr>
-			<tr><td>Brad</td><td><input type="submit" value="Delete"/></td></tr>
-			<tr><td>Kirk</td><td><input type="submit" value="Delete"/></td></tr>
-			<tr><td>Simon</td><td><input type="submit" value="Delete"/></td></tr>
-			<tr><td>Zach</td><td><input type="submit" value="Delete"/></td></tr>
-		</tbody>
-		<tfoot>
-			<tr><td colspan="2"><input type="submit" value="Update"/></td></tr>
-		</tfoot>
-	</table>
-</div>
-		</textarea>
+		<textarea name="html"></textarea>
 	</div>
 	<div id="rendered">
+        <iframe src="about:blank">
+            <html>
+                <head>
+                    <title></title>
+                    <link rel="stylesheet" type="text/css" href="editor.css"/>
+                </head>
+                <body>
+                </body>
+            </html>
+        </iframe>
 	</div>
 </body>
 </html>

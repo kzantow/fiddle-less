@@ -1,9 +1,10 @@
 $(function() {
 	var theme = 'solarized';
+    //theme = 'xq-light';
 	var height = $('textarea[name=less]').height();
 	
 	lessEditor = CodeMirror.fromTextArea($('textarea[name=less]')[0], {
-		mode: "less",
+		mode: "text/x-less",
 		theme: theme,
 		indentWithTabs: true
 	});
@@ -21,7 +22,11 @@ $(function() {
 		indentWithTabs: true
 	});
 	
-	$(document).on('click','#rendered a,#rendered input[type=submit]',function(e) { e.stopPropagation(); e.preventDefault(); return false; });
+	$(document).on('click','#rendered a,#rendered input[type=submit]',function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+    });
 	
 	var changed = true;
 	
@@ -59,18 +64,24 @@ var compileLess = function() {
 	} catch(err) {
 		error = err
 	}
+    
+    var $doc = $($('#rendered iframe')[0].contentWindow.document);
+    var $head = $doc.find('head');
+    var $body = $doc.find('body');
+
+    $.ajax({
+       url: 'editor.css',
+       cache: false,
+       dataType: 'text',
+       success: function(data) {
+           $head.html('<style type="text/css">'+data+'body{padding:10px;}</style>');
+       }
+   });
 	if(error) {
-		$('#rendered').html('<div class="error">'+error+'</div>')
+		$body.html('<div class="error">'+error+'</div>');
 	} else {
-		cssEditor.setValue(cssText)
-		
-		parser.parse('#rendered { ' + lessText + ' @}', function (err, tree) {
-			if (err) { error = err; return }
-			cssText = tree.toCSS();
-		});
-		
-		$('#rendered-style').text(cssText);
-		$('#rendered').html(htmlEditor.getValue());
+		cssEditor.setValue(cssText);
+        $body.html('<style type="text/css">'+cssText+'</style>' + htmlEditor.getValue());
 	}
 };
 

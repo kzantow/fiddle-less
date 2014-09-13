@@ -1,0 +1,37 @@
+<page>
+<title>Example: Nesting Expansion</title>
+<script type="less">
+.header,.footer {
+    background: #fcc;
+
+    .ie7 & {
+        display: inline;
+    }
+    
+    .nav a {
+        display: inline-block;
+        padding: 10px;
+        
+        & + a {
+            border-left: 2px solid #c55;
+        }
+    }
+}
+</script>
+<script type="html">
+<div class="header">
+    <div class="nav">
+        <a class="nav">Nav 1</a>
+        <a class="nav">Nav 2</a>
+        <a class="nav">Nav 3</a>
+    </div>
+</div>
+<h2>Content</h2>
+<div class="footer">
+    <div class="nav">
+        <a class="nav">Nav 1</a>
+        <a class="nav">Nav 2</a>
+    </div>
+</div>
+</script>
+</page>

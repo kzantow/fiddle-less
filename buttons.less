@@ -1,0 +1,61 @@
+// Make this button.css:
+.gradient(@from,@to) {
+    background: -moz-linear-gradient(top, @from 0%, @to 100%);
+    background: linear-gradient(to bottom, @from 0%,@to 100%);
+}
+.button(@size,@from,@to) {
+	.gradient(@from,@to);
+	border: 1px solid darken(@to,10%);
+	border-radius: @size/3;
+	padding: @size/2 @size*1.3;
+	font-size: @size;
+    line-height: @size*1.5;
+	&:hover {
+		.gradient(lighten(@from,5%),lighten(@to,5%));
+	}
+	&:active {
+		.gradient(lighten(@from,5%),lighten(@to,5%));
+		box-shadow: inset 1px 1px 8px 0 darken(@to,10%);
+    	outline: none;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+.gray-button(@size) {
+	.button(@size,#f8f8f8,#cccccc);
+}
+.blue-button(@size) {
+	color: #fff;
+	text-shadow: 0 -1px 1px #22d;
+	.button(@size,#56d,#34a);
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    &:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+}

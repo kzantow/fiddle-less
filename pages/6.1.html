@@ -1,0 +1,24 @@
+<page>
+<title>Example: Extends, Expansion, and Nesting</title>
+<script type="less">
+div pre {
+    color: red;
+}
+
+pre:hover,
+.c1 {
+    &:extend(div pre);
+}
+
+.bucket {
+    tr { // nested ruleset with target selector
+        color: blue;
+    }
+}
+.c2:extend(.bucket tr, div pre) {}
+</script>
+<script type="html">
+<div><pre>pre</pre></div>
+<button class="c2">Button</button>
+</script>
+</page>
