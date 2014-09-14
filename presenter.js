@@ -47,7 +47,7 @@ $(function() {
   });
 
   var findPages = function(idx) {
-  var url = 'pages/' + idx.filter(function(e){return e>0;}).join('.') + '.html';
+  var url = 'pages/' + idx.join('.') + '.html';
       $.ajax({
         url: url,
         cache: false,
@@ -70,18 +70,16 @@ $(function() {
             });
              $examples.append($li);
   
-            // sub-pages?
-             if(idx[1]>0) {
-                findPages([idx[0],idx[1],idx[2]+1]);
-             } else {
-               findPages([idx[0]+1,0,0]);
-             }
-            findPages([idx[0],idx[1]+1,0]);
+            var sub = idx.slice();
+            sub.push(1);
+            findPages(sub); // test for subpages
+            idx[idx.length-1] = idx[idx.length-1] + 1;
+            findPages(idx); // test for next pages
         }
      });
   };
   
-  findPages([1,0,0]);
+  findPages([1]);
   
   if(getCurrentPage()) {
       loadPage(getCurrentPage());
