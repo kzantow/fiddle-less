@@ -3,12 +3,10 @@
 <script type="less">
 @import url(grid.less);
 @import url(buttons.less);
-.ad {
-    .grid-12;
+.ad:extend(.grid-12) {
     text-align: center;
 }
-.news {
-    .grid-4;
+.news:extend(.grid-4) {
     > div {
         > a {
             display: block;
@@ -18,16 +16,14 @@
         }
     }
 }
-.info {
-    .grid-8;
+.info:extend(.grid-8) {
     a {
         display: block;
     }
 }
 
 
-.menu {
-    .grid-12;
+.menu:extend(.grid-12) {
     margin-bottom: 10px;
     position: relative;
     a {
