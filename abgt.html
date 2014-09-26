@@ -6,7 +6,7 @@
 $(function() {
 
 $.get('http://pipes.yahoo.com/pipes/pipe.run?_id=a7d6b876ecda107e4939554ee897eb71&_render=json',function(data) {
-	$.each(data.value.items, function(){
+	$.each(data, function(){
 		var channel = this.channel;
 		var $div = $('<div></div>').appendTo('body');
 		$div.append('<h1>'+channel.title+'</h1>');
