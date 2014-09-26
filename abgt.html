@@ -10,7 +10,7 @@ $.get('http://pipes.yahoo.com/pipes/pipe.run?_id=a7d6b876ecda107e4939554ee897eb7
 		var channel = this.channel;
 		var $div = $('<div></div>').appendTo('body');
 		$div.append('<h1>'+channel.title+'</h1>');
-		$.each(channel.item, function(){
+		$.each(channel.item.slice(0,10), function(){
 			$div.append('<a href="'+this.enclosure.url+'">'+this.title+' - '+this['itunes:subtitle']+' ('+this.description+')</a>');
 		});
 	});
@@ -19,10 +19,11 @@ $.get('http://pipes.yahoo.com/pipes/pipe.run?_id=a7d6b876ecda107e4939554ee897eb7
 });
 </script>
 <style type="text/css">
-body { max-width: 200em; margin: 20px auto; }
-a { font: .8em Arial,sans-serif; display: block; margin: 4px; text-decoration: none; }
+body { font-family: Arial,sans-serif; max-width: 200em; margin: 20px auto; }
+h1 { font-size: margin: 20px 0 8px 0; border-bottom: 1px solid #ddd; }
+a { font-size: .8em; display: block; margin: 8px; text-decoration: none; }
 a:hover { text-decoration: underline; }
-body > div { height: 20em; overflow: auto; margin: 10px; padding: 10px; background: #f8f8f8; border: 1px solid #ccc; border-radius: 5px; }
+body > div { margin: 0 10px 30px 10px; }
 </style>
 </head>
 <body>
