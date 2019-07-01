@@ -5,7 +5,7 @@ LESS fiddle script/page
 
 NOTE: there is a minor issue with the CodeMirror editor, where typing an ampersand in certain 
 cases causes the editor to become unresponsive. You may work around this by undoing the typing of the
-ampersand and copy another rule that already has an an ampersand.
+ampersand and copy another rule that already has an ampersand.
 
 You can try it out here (note: uses rawgithub): http://kzantow.github.io/fiddle-less
 
